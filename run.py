@@ -16,4 +16,20 @@ games = SHEET.worksheet('games')
 
 data = games.get_all_values()
 
-print(data)
+
+def add_game():
+    """
+    Accept a new game from the user to be added to the spreadsheet.
+    """
+    genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer', 'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy', 'Visual Novel']
+    print('Please enter the following data separated by comma:')
+    print('Title')
+    print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, \
+Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel')
+    print('Example: Doom (1993), FPS')
+
+    data_str = input('Enter Title and Genre here:\n')
+
+
+add_game()
+
