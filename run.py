@@ -28,7 +28,7 @@ def get_game():
         print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, \
 Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel')
         print('Platform - options: Nintendo Switch, Playstation, Xbox, Multi-platform, Other')
-        print('Example: Doom (1993), FPS, Multi-platform')
+        print('Example: Doom (1993),FPS,Multi-platform')
 
         data_str = input('Enter Title, Genre and Platform here:\n')
         game_data = data_str.split(',')
@@ -51,18 +51,31 @@ def validate_data(values):
     genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer', 'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy', 'Visual Novel']
     platform = ['Nintendo Switch', 'Playstation', 'Xbox', 'Multi-platform', 'Other']
 
+    check_genre = any(item in genre for item in values)
+    check_platform = any(item in platform for item in values)
+
     try:
         if len(values) != 3:
             raise ValueError(
                 f"Exactly 3 values required, you provided {len(values)}"
             )
-        elif values[1] not in genre:
+    except ValueError as err:
+        print(f"Invalid data: {err}, please try again.\n")
+        return False
+
+    try:
+        if check_genre is False:
             raise ValueError(f'{values[1]} is not valid genre.')
 
-        elif values[2] not in platform:
+    except ValueError as err:
+        print(f"Invalid data: {err}, please try again.\n")
+        return False
+
+    try:
+        if check_platform is False:
             raise ValueError(f'{values[2]} is not valid platform.')
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    except ValueError as err:
+        print(f"Invalid data: {err}, please try again.\n")
         return False
 
     return True
