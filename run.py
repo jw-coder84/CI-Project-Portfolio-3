@@ -99,7 +99,7 @@ def game_vote():
 
     vote_title = input("Please enter a game title to cast your vote.\n")
     game_cell = games.find(vote_title)
-    games.update_cell(game_cell.row, 'votes', 'val')
+    games.update_cell(game_cell.row, 'votes', +1)
 
 
 def main():
