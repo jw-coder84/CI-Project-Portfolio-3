@@ -92,6 +92,16 @@ def update_worksheet(data, worksheet):
     print(f"{worksheet} worksheet updated successfully.\n")
 
 
+def game_vote():
+    """
+    Lets users vote for an existing game
+    """
+
+    vote_title = input("Please enter a game title to cast your vote.\n")
+    game_cell = games.find(vote_title)
+    games.update_cell(game_cell.row, 'votes', 'val')
+
+
 def main():
     """
     Run all program functions
