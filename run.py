@@ -26,8 +26,8 @@ def get_game():
         print('Please enter the following data separated by comma:')
         print('Title')
         print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, \
-Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel')
-        print('Platform - options: Nintendo Switch, Playstation, Xbox, Multi-platform, Other')
+Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+        print('Platform - options: Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
         print('Example: Doom (1993),FPS,Multi-platform')
 
         data_str = input('Enter Title, Genre and Platform here:\n')
@@ -81,4 +81,23 @@ def validate_data(values):
     return True
 
 
-get_game()
+def update_worksheet(data, worksheet):
+    """
+    Receives a list of integers to be inserted into a worksheet
+    Update the relevant worksheet with the data provided
+    """
+    print(f"Updating {worksheet} worksheet...\n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} worksheet updated successfully.\n")
+
+
+def main():
+    """
+    Run all program functions
+    """
+    data = get_game()
+    update_worksheet(data, 'games')
+
+
+main()
