@@ -96,10 +96,12 @@ def game_vote():
     """
     Lets users vote for an existing game
     """
-
     vote_title = input("Please enter a game title to cast your vote.\n")
     game_cell = games.find(vote_title)
-    games.update_cell(game_cell.row, 'votes', +1)
+    vote = games.cell(game_cell.row, 4).value
+    print(vote)
+    games.update_cell(game_cell.row, 4, int(vote) + 1)
+    print(vote)
 
 
 def main():
@@ -110,4 +112,5 @@ def main():
     update_worksheet(data, 'games')
 
 
-main()
+#main()
+game_vote()
