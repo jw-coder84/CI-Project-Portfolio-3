@@ -96,21 +96,30 @@ def game_vote():
     """
     Lets users vote for an existing game
     """
+
     vote_title = input("Please enter a game title to cast your vote.\n")
     game_cell = games.find(vote_title)
     vote = games.cell(game_cell.row, 4).value
-    print(vote)
     games.update_cell(game_cell.row, 4, int(vote) + 1)
-    print(vote)
+    print('Thanks for voting!')
 
 
 def main():
     """
     Run all program functions
     """
-    data = get_game()
-    update_worksheet(data, 'games')
+    user_add = input("Would you like to add a game to the list? (N/Y)\n")
+    if user_add == 'Y':
+        user_game = get_game()
+        update_worksheet(user_game, 'games')
+    else:
+        pass
+
+    user_vote = input("Would you like to vote for a game in the list? (N/Y)\n")
+    if user_vote == 'Y':
+        game_vote()
+    else:
+        pass
 
 
-#main()
-game_vote()
+main()
