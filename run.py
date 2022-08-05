@@ -1,5 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import pandas as pd
+from gspread_dataframe import get_as_dataframe
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -105,6 +107,16 @@ def game_vote():
     print('Thanks for voting!')
 
 
+def search_game():
+    """
+    Compiles list of top ten games based on number of votes alone.
+    Alternatively, users can filter by platform and or genre.
+    """
+    games_df = get_as_dataframe(games, usecols=[0,1,2,3])
+
+    print(games_df.head())
+
+
 def main():
     """
     Run all program functions
@@ -123,4 +135,5 @@ def main():
         pass
 
 
-main()
+search_game()
+#main()
