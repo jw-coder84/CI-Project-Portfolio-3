@@ -112,9 +112,11 @@ def search_game():
     Compiles list of top ten games based on number of votes alone.
     Alternatively, users can filter by platform and or genre.
     """
-    games_df = get_as_dataframe(games, usecols=[0,1,2,3])
-
-    print(games_df.head())
+    games_df = get_as_dataframe(games, usecols=[0, 1, 2, 3])
+    count = list(range(1, 11))
+    top_ten = games_df.nlargest(10, 'votes')
+    top_ten['No.'] = count
+    print(top_ten.set_index('No.'))
 
 
 def main():
