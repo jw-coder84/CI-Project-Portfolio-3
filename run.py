@@ -116,7 +116,16 @@ def search_game():
     count = list(range(1, 11))
     top_ten = games_df.nlargest(10, 'votes')
     top_ten['No.'] = count
-    print(top_ten.set_index('No.'))
+    top_ten = top_ten.set_index('No.')
+    #print(top_ten)
+    
+    #search_genre = input('Please enter genre:\n')
+    #filter_genre = games_df[(games_df['genre'] == search_genre)]
+    #print(filter_genre.nlargest(10, 'votes'))
+
+    search_platform = input('Please enter platform:\n')
+    filter_platform = games_df[(games_df['platform'] == search_platform)]
+    print(filter_platform.nlargest(10, 'votes'))
 
 
 def main():
