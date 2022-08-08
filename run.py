@@ -118,9 +118,11 @@ def search_game():
     top_ten['No.'] = count
     top_ten = top_ten.set_index('No.')
 
-    print('A: All, G: genre, P: platform\n')
+    print('Here you can display a top ten list of games based on the number of votes.\n'
+          'You can refine the results with the following search criteria:\n')
+    print('N: None, G: genre, P: platform\n')
     search_filter = input('Please enter a search filter\n')
-    if search_filter == 'A':
+    if search_filter == 'N':
         print(top_ten)
 
     elif search_filter == 'G':
