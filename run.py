@@ -117,15 +117,26 @@ def search_game():
     top_ten = games_df.nlargest(10, 'votes')
     top_ten['No.'] = count
     top_ten = top_ten.set_index('No.')
-    #print(top_ten)
-    
-    #search_genre = input('Please enter genre:\n')
-    #filter_genre = games_df[(games_df['genre'] == search_genre)]
-    #print(filter_genre.nlargest(10, 'votes'))
 
-    search_platform = input('Please enter platform:\n')
-    filter_platform = games_df[(games_df['platform'] == search_platform)]
-    print(filter_platform.nlargest(10, 'votes'))
+    print('A: All, G: genre, P: platform\n')
+    search_filter = input('Please enter a search filter\n')
+    if search_filter == 'A':
+        print(top_ten)
+
+    elif search_filter == 'G':
+        print('Adventure, Racing, FPS, RPG, Action, Platformer, \
+Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+        search_genre = input('Please enter genre from the above list:\n')
+        filter_genre = games_df[(games_df['genre'] == search_genre)]
+        print(filter_genre.nlargest(10, 'votes'))
+
+    elif search_filter == 'P':
+        print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
+        search_platform = input('Please enter platform from the above list:\n')
+        filter_platform = games_df[(games_df['platform'] == search_platform)]
+        print(filter_platform.nlargest(10, 'votes'))
+    else:
+        pass
 
 
 def main():
