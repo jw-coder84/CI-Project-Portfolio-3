@@ -119,8 +119,9 @@ def search_game():
     top_ten = top_ten.set_index('No.')
 
     print('Here you can display a top ten list of games based on the number of votes.\n'
-          'You can refine the results with the following search criteria:\n')
-    print('N: None, G: genre, P: platform\n')
+          'You can refine the results using genre or platform as search criteria.\n')
+    print('Please choose one of the following options:\n')
+    print('N: No filter, G: by genre, P: by platform\n')
     search_filter = input('Please enter a search filter\n')
     if search_filter == 'N':
         print(top_ten)
@@ -158,6 +159,11 @@ def main():
     else:
         pass
 
+    user_search = input("Would you like to view the top ten games? (N/Y)\n")
+    if user_search == 'Y':
+        search_game()
+    else:
+        pass
 
-search_game()
-#main()
+
+main()
