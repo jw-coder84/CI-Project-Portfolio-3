@@ -27,8 +27,8 @@ def get_game():
     while True:
         print('Please enter the following data separated by comma:')
         print('Title')
-        print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, \
-Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+        print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, '
+            'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
         print('Platform - options: Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
         print('Example: Doom (1993),FPS,Multi-platform')
 
@@ -49,7 +49,6 @@ def validate_data(values):
     """
     Raises error if the genre and or platform do not exist in the defined arrays.
     """
-
     genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer', 'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy', 'Visual Novel']
     platform = ['Nintendo Switch', 'Playstation', 'Xbox', 'Multi-platform', 'Other']
 
@@ -122,19 +121,22 @@ def search_game():
           'You can refine the results using genre or platform as search criteria.\n')
     print('Please choose one of the following options:\n')
     print('N: No filter, G: by genre, P: by platform\n')
+
     search_filter = input('Please enter a search filter\n')
     if search_filter == 'N':
         print(top_ten)
 
     elif search_filter == 'G':
-        print('Adventure, Racing, FPS, RPG, Action, Platformer, \
-Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+        print('Adventure, Racing, FPS, RPG, Action, Platformer, '
+            'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+
         search_genre = input('Please enter genre from the above list:\n')
         filter_genre = games_df[(games_df['genre'] == search_genre)]
         print(filter_genre.nlargest(10, 'votes'))
 
     elif search_filter == 'P':
         print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
+
         search_platform = input('Please enter platform from the above list:\n')
         filter_platform = games_df[(games_df['platform'] == search_platform)]
         print(filter_platform.nlargest(10, 'votes'))
@@ -146,24 +148,20 @@ def main():
     """
     Run all program functions
     """
-    user_add = input("Would you like to add a game to the list? (N/Y)\n")
-    if user_add == 'Y':
+    user_option = input('Please choose one of the following options\n'
+                        'A = Add new game to the list\nV = vote for existing game\n'
+                        'T = view top ten games with optional search criteria\n')
+
+    if user_option == 'A':
         user_game = get_game()
         update_worksheet(user_game, 'games')
-    else:
-        pass
-
-    user_vote = input("Would you like to vote for a game in the list? (N/Y)\n")
-    if user_vote == 'Y':
+    elif user_option == 'V':
         game_vote()
-    else:
-        pass
-
-    user_search = input("Would you like to view the top ten games? (N/Y)\n")
-    if user_search == 'Y':
+    elif user_option == 'T':
         search_game()
     else:
         pass
 
 
+print('Welcome to Games Chart Data')
 main()
