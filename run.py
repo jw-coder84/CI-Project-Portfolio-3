@@ -34,6 +34,7 @@ def get_game():
 
         data_str = input('Enter Title, Genre and Platform here:\n')
         game_data = data_str.split(',')
+        game_data = [item.strip() for item in game_data]
         validate_data(game_data)
         print(f'The data provided is {data_str}')
         print(game_data)
