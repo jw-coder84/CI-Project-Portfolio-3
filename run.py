@@ -150,16 +150,21 @@ def main():
     """
     Run all program functions
     """
-    user_option = input('Please choose one of the following options\n'
-                        'A = Add new game to the list\nV = vote for existing game\n'
-                        'T = view top ten games with optional search criteria\n')
-
-    if user_option == 'A':
+    user_add = input("Would you like to add a game to the list? (N/Y)\n")
+    if user_add == 'Y':
         user_game = get_game()
         update_worksheet(user_game, 'games')
-    elif user_option == 'V':
+    else:
+        pass
+
+    user_vote = input("Would you like to vote for a game in the list? (N/Y)\n")
+    if user_vote == 'Y':
         game_vote()
-    elif user_option == 'T':
+    else:
+        pass
+
+    user_search = input("Would you like to view the top ten games? (N/Y)\n")
+    if user_search == 'Y':
         search_game()
     else:
         pass
