@@ -49,10 +49,14 @@ def get_game():
 
 def validate_data(values):
     """
-    Raises error if the genre and or platform do not exist in the defined arrays.
+    Raises error if the genre and or platform do not exist in the defined
+    arrays.
     """
-    genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer', 'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy', 'Visual Novel']
-    platform = ['Nintendo Switch', 'Playstation', 'Xbox', 'Multi-platform', 'Other']
+    genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer',
+             'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy',
+             'Visual Novel']
+    platform = ['Nintendo Switch', 'Playstation', 'Xbox', 'Multi-platform',
+                'Other']
 
     check_genre = any(item in genre for item in values)
     check_platform = any(item in platform for item in values)
@@ -119,8 +123,10 @@ def search_game():
     top_ten['No.'] = count
     top_ten = top_ten.set_index('No.')
 
-    print('Here you can display a top ten list of games based on the number of votes.\n'
-          'You can refine the results using genre or platform as search criteria.\n')
+    print('Here you can display a top ten list of games based on the number '
+          'of votes.\n'
+          'You can refine the results using genre or platform as search '
+          'criteria.\n')
     print('Please choose one of the following options:\n')
     print('N: No filter, G: by genre, P: by platform\n')
 
@@ -130,7 +136,7 @@ def search_game():
 
     elif search_filter == 'G':
         print('Adventure, Racing, FPS, RPG, Action, Platformer, '
-            'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
+              'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
 
         search_genre = input('Please enter genre from the above list:\n')
         filter_genre = games_df[(games_df['genre'] == search_genre)]
