@@ -25,19 +25,20 @@ def get_game():
     """
 
     while True:
-        print('Please enter the following data separated by comma:')
-        print('Title')
-        print('Genre - options: Adventure, Racing, FPS, RPG, Action, Platformer, '
-            'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
-        print('Platform - options: Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
-        print('Example: Doom (1993),FPS,Multi-platform')
 
-        data_str = input('Enter Title, Genre and Platform here:\n')
-        game_data = data_str.split(',')
+        title = input('Please enter title:\n')
+        genre = input('Please enter a genre from the following list:\n'
+                      'Adventure, Racing, FPS, RPG, Action, '
+                      'Platformer, Fighting, Puzzle, Simulation, Sports, '
+                      'Strategy, Visual Novel\n')
+        platform = input('Please enter platform from the following list:\n'
+                         'Nintendo Switch, Playstation, Xbox, '
+                         'Multi-platform, Other\n')
+
+        game_data = [title, genre, platform]
         game_data = [item.strip() for item in game_data]
         validate_data(game_data)
-        print(f'The data provided is {data_str}')
-        print(game_data)
+        print(f'The data provided is {game_data}')
 
         if validate_data(game_data):
             print('Data is valid!')
