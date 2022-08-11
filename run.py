@@ -131,6 +131,7 @@ def search_game():
     print('N: No filter, G: by genre, P: by platform\n')
 
     search_filter = input('Please enter a search filter\n')
+    search_filter = search_filter.upper()
     if search_filter == 'N':
         print(top_ten)
 
@@ -146,6 +147,7 @@ def search_game():
         print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
 
         search_platform = input('Please enter platform from the above list:\n')
+        search_platform = search_platform.capitalize()
         filter_platform = games_df[(games_df['platform'] == search_platform)]
         print(filter_platform.nlargest(10, 'votes'))
     else:
@@ -157,6 +159,7 @@ def main():
     Run all program functions
     """
     user_add = input("Would you like to add a game to the list? (N/Y)\n")
+    user_add = user_add.upper()
     if user_add == 'Y':
         user_game = get_game()
         update_worksheet(user_game, 'games')
@@ -164,12 +167,14 @@ def main():
         pass
 
     user_vote = input("Would you like to vote for a game in the list? (N/Y)\n")
+    user_vote = user_vote.upper()
     if user_vote == 'Y':
         game_vote()
     else:
         pass
 
     user_search = input("Would you like to view the top ten games? (N/Y)\n")
+    user_search = user_search.upper()
     if user_search == 'Y':
         search_game()
     else:
