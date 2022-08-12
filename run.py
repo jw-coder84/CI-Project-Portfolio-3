@@ -152,7 +152,7 @@ def search_game():
                 continue
 
             filter_genre = games_df[(games_df['genre'] == search_genre)]
-            print(filter_genre.nlargest(10, 'votes'))
+            print(filter_genre.nlargest(10, 'votes').reset_index(drop=True))
             break
 
     elif search_filter == 'P':
@@ -166,7 +166,7 @@ def search_game():
                 continue
 
             filter_platform = games_df[(games_df['platform'] == search_platform)]
-            print(filter_platform.nlargest(10, 'votes'))
+            print(filter_platform.nlargest(10, 'votes').reset_index(drop=True))
             break
     else:
         pass
