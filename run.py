@@ -119,6 +119,7 @@ def game_vote():
 
     return True
 
+
 def search_game():
     """
     Compiles list of top ten games based on number of votes alone.
