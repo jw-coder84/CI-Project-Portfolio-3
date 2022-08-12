@@ -104,13 +104,20 @@ def game_vote():
     """
     Lets users vote for an existing game
     """
+    while True:
+        vote_title = input("Please enter a game title to cast your vote.\n")
+        game_cell = games.find(vote_title)
+        print('Submitting vote...')
+        if game_cell is None:
+            print(f'{vote_title} could not be found')
+            continue
 
-    vote_title = input("Please enter a game title to cast your vote.\n")
-    game_cell = games.find(vote_title)
-    vote = games.cell(game_cell.row, 4).value
-    games.update_cell(game_cell.row, 4, int(vote) + 1)
-    print('Thanks for voting!')
+        vote = games.cell(game_cell.row, 4).value
+        games.update_cell(game_cell.row, 4, int(vote) + 1)
+        print('Thanks for voting!')
+        break
 
+    return True
 
 def search_game():
     """
@@ -170,6 +177,8 @@ def search_game():
             break
     else:
         pass
+
+    return True
 
 
 def main():
