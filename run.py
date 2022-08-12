@@ -150,18 +150,24 @@ def search_game():
             if search_genre not in genre:
                 print(f'{search_genre} is not valid genre.')
                 continue
-            else:
-                filter_genre = games_df[(games_df['genre'] == search_genre)]
-                print(filter_genre.nlargest(10, 'votes'))
-                break
+
+            filter_genre = games_df[(games_df['genre'] == search_genre)]
+            print(filter_genre.nlargest(10, 'votes'))
+            break
 
     elif search_filter == 'P':
         print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
 
-        search_platform = input('Please enter platform from the above list:\n')
-        search_platform = search_platform.capitalize()
-        filter_platform = games_df[(games_df['platform'] == search_platform)]
-        print(filter_platform.nlargest(10, 'votes'))
+        while True:
+            search_platform = input('Please enter platform from the above list:\n')
+            search_platform = search_platform.capitalize()
+            if search_platform not in platform:
+                print(f'{search_platform} is not valid platform.')
+                continue
+
+            filter_platform = games_df[(games_df['platform'] == search_platform)]
+            print(filter_platform.nlargest(10, 'votes'))
+            break
     else:
         pass
 
