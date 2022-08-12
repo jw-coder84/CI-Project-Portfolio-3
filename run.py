@@ -117,6 +117,12 @@ def search_game():
     Compiles list of top ten games based on number of votes alone.
     Alternatively, users can filter by platform and or genre.
     """
+    genre = ['Adventure', 'Racing', 'FPS', 'RPG', 'Action', 'Platformer',
+             'Fighting', 'Puzzle', 'Simulation', 'Sports', 'Strategy',
+             'Visual Novel']
+    platform = ['Nintendo Switch', 'Playstation', 'Xbox', 'Multi-platform',
+                'Other']
+
     games_df = get_as_dataframe(games, usecols=[0, 1, 2, 3])
     count = list(range(1, 11))
     top_ten = games_df.nlargest(10, 'votes')
@@ -139,9 +145,15 @@ def search_game():
         print('Adventure, Racing, FPS, RPG, Action, Platformer, '
               'Fighting, Puzzle, Simulation, Sports, Strategy, Visual Novel\n')
 
-        search_genre = input('Please enter genre from the above list:\n')
-        filter_genre = games_df[(games_df['genre'] == search_genre)]
-        print(filter_genre.nlargest(10, 'votes'))
+        while True:
+            search_genre = input('Please enter genre from the above list:\n')
+            if search_genre not in genre:
+                print(f'{search_genre} is not valid genre.')
+                continue
+            else:
+                filter_genre = games_df[(games_df['genre'] == search_genre)]
+                print(filter_genre.nlargest(10, 'votes'))
+                break
 
     elif search_filter == 'P':
         print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
