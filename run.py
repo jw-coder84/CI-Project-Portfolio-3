@@ -168,7 +168,6 @@ def search_game():
 
         while True:
             search_platform = input('Please enter platform from the above list:\n')
-            search_platform = search_platform.capitalize()
             if search_platform not in platform:
                 print(f'{search_platform} is not valid platform.')
                 continue
