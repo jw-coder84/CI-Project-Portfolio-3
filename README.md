@@ -37,7 +37,7 @@ When the program begins, a welcome message is printed and the user is asked if t
 
 ### Add Game
 If the user chooses to add a game then they are asked to enter the 3 parts of data one at a time. The title, genre, then platform. The user's entered data is printed followed by messages confirming the data is valid and has been uploaded successfully.
-<img src="readme_images/game-add.png" width="450" height="260"><br>
+<br><img src="readme_images/game-add.png" width="450" height="260"><br>
 Updated spreadsheet
 <br><img src="readme_images/sheet-game-add.png" width="600" height="60"><br>
 If an incorrect genre or platform are entered, an error message will be displayed and the user will be prompted to enter the data again.
@@ -61,3 +61,23 @@ Filtered by platform.
 
 ## Future Features
 
+* Multi-platform games may not be available on all consoles, they may only be available for 2. Searching for a console like Xbox, will only return games that are exclusive for that console. Multi-plaform games that are also on Xbox will not be returned. A future improvement would be to replace multi-platform with a comma separated list of consoles e.g. Xbox, Playstation. All Xbox games would then be returned in the results whether they are exlusive or on other consoles as well.
+
+* On sites like Nintendo Life and Pure Xbox all games have 2 genres. This is reasonable as advanced as games are, 2 genres do a better job of summming a game up. This could result in more accurate searches that users would expect or return the same games in too many searches, making the genre search less effective.
+
+* Adding a function to Export the top ten lists to a file to allow users to use the data for their own purposes.
+
+
+# Technologies Used
+* [Python](https://python.org)
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used in Code Institute template.
+* [CSS](https://en.wikipedia.org/wiki/CSS) - Used in Code Institute template.
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used in Code Institute template.
+
+# External Sources
+* [Pandas](https://pandas.pydata.org/)
+* [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
+* [Google Sheets](https://docs.google.com/spreadsheets)
+* [W3 Schools](https://www.w3schools.com/)
+* [Stack Overflow](https://stackoverflow.com/)
+* CI Love Sandwiches walkthrough project
