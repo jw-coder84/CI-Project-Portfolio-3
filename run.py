@@ -167,12 +167,14 @@ def search_game():
         print('Nintendo Switch, Playstation, Xbox, Multi-platform, Other\n')
 
         while True:
-            search_platform = input('Please enter platform from the above list:\n')
+            search_platform = input('Please enter platform from the above '
+                                    'list:\n')
             if search_platform not in platform:
                 print(f'{search_platform} is not valid platform.')
                 continue
 
-            filter_platform = games_df[(games_df['platform'] == search_platform)]
+            filter_platform = games_df[(games_df['platform'] ==
+                                        search_platform)]
             print(filter_platform.nlargest(10, 'votes').reset_index(drop=True))
             break
     else:

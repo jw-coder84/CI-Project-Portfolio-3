@@ -75,9 +75,18 @@ Filtered by platform.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used in Code Institute template.
 
 # External Sources
-* [Pandas](https://pandas.pydata.org/)
+* [Pandas docs](https://pandas.pydata.org/)
+* [gspread docs](https://docs.gspread.org/)
 * [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
 * [Google Sheets](https://docs.google.com/spreadsheets)
 * [W3 Schools](https://www.w3schools.com/)
 * [Stack Overflow](https://stackoverflow.com/)
 * CI Love Sandwiches walkthrough project
+
+# Python Libraries used
+* [Pandas docs](https://pandas.pydata.org/)
+* [gspread docs](https://docs.gspread.org/)
+* [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
+* [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
+
+
