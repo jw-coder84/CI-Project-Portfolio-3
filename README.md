@@ -1,31 +1,20 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **_Games Chart - Project Portfolio 3_**
 
-Welcome jw-coder84,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## [View app](https://games-chart.herokuapp.com/)
 
-## Reminders
+# Contents
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+# Objective
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* The application lets the user add games to a spreadsheet. The information required for each record is the games title, genre and the platform the game is available for. 
+* Another function allows users to vote for any of the games on the list. The number of votes will be recorded on the spreadsheet. 
+* The final function allows users to query the spreadsheet. Users can view the top ten games on the spreadsheet based on the number of votes alone. A search by genre or platform can also be performed with the results still being organised by the number of votes. Therefore it's always a top ten chart that's being viewed, but could be the top ten adventure games or the top ten Nintendo Switch games. With a large number of games being in the list, these searches will allow users to glean further insight from the data.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+# User Experience (UX)
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+## Design Diagram
