@@ -29,7 +29,7 @@
 ![Design diagram](readme_images/design-diagram.png)
 </details><br>
 
-# Features
+## Features
 ### Introduction
 When the program begins, a welcome message is printed and the user is asked if they want to add a game to the list.
 
@@ -47,12 +47,17 @@ If an incorrect genre or platform are entered, an error message will be displaye
 ### Vote Game
 When a user votes for a game, 1 is added to the current number of votes. If the game is not found in the spreadsheet then an error is returned and the user is asked to enter another game.
 <br><img src="readme_images/game-vote.png" width="450" height="260"><br>
-Updated spreadsheet
+Updated spreadsheet.
 <br><img src="readme_images/sheet-vote-game.png" width="600" height="60"><br>
 
 ### Search Spreadsheet
 The user can choose to display the top ten games from the list based on votes alone, or filter by genre or platform.
+Validation is also in place to ensure correct genre and platforms are entered.
 <br><img src="readme_images/top-ten.png" width="450" height="260"><br>
 Filtered by genre.
 <br><img src="readme_images/filter-genre.png" width="450" height="260"><br>
-Filtered by platform
+Filtered by platform.
+<br><img src="readme_images/filter-platform.png" width="450" height="260"><br>
+
+## Future Features
+
