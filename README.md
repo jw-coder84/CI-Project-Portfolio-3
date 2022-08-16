@@ -125,6 +125,7 @@ My code was validated using [PEP8](http://pep8online.com/).
 <br>games.update_cell(game_cell.row, 4, int(vote) + 1)
 <br>
 <br>
+
 * Adding a chart postition column to the top ten dataframe.
 <br>The column displays 1 to 10 in ascending order along side the list of games.
 <br>I used the set_index method to acheive this. I appended this to the top_ten dataframe on the print statement that displayed the list.
@@ -132,12 +133,14 @@ My code was validated using [PEP8](http://pep8online.com/).
 <br>I used the set_index method on the top_ten dataframe before the print statement and the chart positions appeared in the correct order.
 <br>
 <br>
+
 * Data validation for adding a new game.
 <br>If genre, title or platform were entered with a leading space then they would not be recognized as valid input. E.g. title, genre, platform. I was asking the user to input all three items in one comma separated string.
 <br>I used the strip method to remove leading or trailing spaces.
 <br>I updated the program later to ask the user for one item at a time which reduces the likelyhood of an unwanted space being entered. However, I left the strip method in place.
 <br>
 <br>
+
 * Search by genre and platform validation.
 <br>The user was prompted to enter the value again, even if the genre or platform was correct.
 <br>When the genre or plaform was correct the list would be printed and the user still asked to enter another value.
@@ -146,6 +149,7 @@ My code was validated using [PEP8](http://pep8online.com/).
 <br>I looked at examples of break and continue for content validaton on Stack Overflow.
 <br>
 <br>
+
 * I tested each function as they were added to confirm the basic functionality was working. I then added the validation checks to enforce correct data input.
 
 [Back to contents](#contents)
