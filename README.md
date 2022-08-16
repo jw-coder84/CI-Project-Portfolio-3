@@ -4,7 +4,24 @@
 ## [View app](https://games-chart.herokuapp.com/)
 
 # Contents
-
+* [Objective](#objective)
+* [User Experience (UX)](#user-experience-ux)
+    * [Design Diagram](#design-diagram)
+    * [Features](#features)
+        * [Introduction](#introduction)
+        * [Add Game](#add-game)
+        * [Vote Game](#vote-game)
+        * [Search Spreadsheet](#search-spreadsheet)
+    * [Future Features](#future-features)
+* [Technologies Used](#technologies-used)
+* [External Sources](#external-sources)
+* [Python Libraries Used](#python-libraries-used)
+* [Testing](#testing)
+    * [Bugs and Solutions](#bugs-and-solutions)
+* [Deployment](#deployment)
+    * [GitHub](#github)
+    * [Heroku](#heroku)
+* [Credits](#credits)
 
 
 
@@ -14,6 +31,7 @@
 * Another function allows users to vote for any of the games on the list. The number of votes will be recorded on the spreadsheet. 
 * The final function allows users to query the spreadsheet. Users can view the top ten games on the spreadsheet based on the number of votes alone. A search by genre or platform can also be performed with the results still being organised by the number of votes. Therefore it's always a top ten chart that's being viewed, but could be the top ten adventure games or the top ten Nintendo Switch games. With a large number of games being in the list, these searches will allow users to glean further insight from the data.
 
+[Back to contents](#contents)
 
 # User Experience (UX)
 
@@ -67,6 +85,7 @@ Filtered by platform.
 
 * Adding a function to Export the top ten lists to a file to allow users to use the data for their own purposes.
 
+[Back to contents](#contents)
 
 # Technologies Used
 * [Python](https://python.org)
@@ -89,6 +108,8 @@ Filtered by platform.
 * [gspread docs](https://docs.gspread.org/)
 * [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
 * [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
+
+[Back to contents](#contents)
 
 # Testing
 My code was validated using [PEP8](http://pep8online.com/).
@@ -127,6 +148,8 @@ My code was validated using [PEP8](http://pep8online.com/).
 <br>
 * I tested each function as they were added to confirm the basic functionality was working. I then added the validation checks to enforce correct data input.
 
+[Back to contents](#contents)
+
 # Deployment
 ### GitHub
 The website was deployed by the following steps:
@@ -159,4 +182,4 @@ To clone a GitHub repository, use the following steps:
 Thank you to my mentor Adegbenga for advising me on the best course of implementation for my project to meet the necessary requirements and for other pointers.
 The Code Institute Love Sandwiches project was referenced for the implentation of my code.
 
-
+[Back to contents](#contents)
