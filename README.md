@@ -70,6 +70,7 @@ Filtered by platform.
 
 # Technologies Used
 * [Python](https://python.org)
+* [Google Sheets](https://docs.google.com/spreadsheets)
 * [HTML5](https://en.wikipedia.org/wiki/HTML5) - Used in Code Institute template.
 * [CSS](https://en.wikipedia.org/wiki/CSS) - Used in Code Institute template.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used in Code Institute template.
@@ -88,5 +89,45 @@ Filtered by platform.
 * [gspread docs](https://docs.gspread.org/)
 * [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
 * [google.oauth2.service_account](https://google-auth.readthedocs.io/en/master/reference/google.oauth2.service_account.html)
+
+# Testing
+My code was validated using [PEP8](http://pep8online.com/).
+<br><img src="readme_images/pep8.png" width="450" height="290"><br>
+
+## Bugs and solutions
+* Adding 1 to the vote cell when a game receives a vote.
+<br>Received invalid type error.
+<br>I added the following code to the update_worksheet function to set the vote cell to 0 by default.
+<br>data.append(0)
+<br>The data list then became \[title, genre, plaform, 0], placing the 0 in the vote column.
+<br>I then wrapped vote cell variable in the int method in the following line:
+<br>games.update_cell(game_cell.row, 4, int(vote) + 1)
+<br>
+<br>
+* Adding a chart postition column to the top ten dataframe.
+<br>The column displays 1 to 10 in ascending order along side the list of games.
+<br>I used the set_index method to acheive this. I appended this to the top_ten dataframe on the print statement that displayed the list.
+<br>The chart number list was applied before the games were re-ordered according to the number of votes. The chart positions were in the wrong order.
+<br>I used the set_index method on the top_ten dataframe before the print statement and the chart positions appeared in the correct order.
+<br>
+<br>
+* Data validation for adding a new game.
+<br>If genre, title or platform were entered with a leading space then they would not be recognized as valid input. E.g. title, genre, platform. I was asking the user to input all three items in one comma separated string.
+<br>I used the strip method to remove leading or trailing spaces.
+<br>I updated the program later to ask the user for one item at a time which reduces the likelyhood of an unwanted space being entered. However, I left the strip method in place.
+<br>
+<br>
+* Search by genre and platform validation.
+<br>The user was prompted to enter the value again, even if the genre or platform was correct.
+<br>When the genre or plaform was correct the list would be printed and the user still asked to enter another value.
+<br>The program would end without print the filtered list.
+<br>These issues were cause by certain parts of code being within or outsite of the while loop. In addition to this, the continue and break keywords were also misplaced or misused.
+<br>I looked at examples of break and continue for content validaton on Stack Overflow.
+<br>
+<br>
+* I tested each function as they were added to confirm the basic functionality was working. I then added the validation checks to enforce correct data input.
+
+
+
 
 
