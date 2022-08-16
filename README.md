@@ -127,7 +127,36 @@ My code was validated using [PEP8](http://pep8online.com/).
 <br>
 * I tested each function as they were added to confirm the basic functionality was working. I then added the validation checks to enforce correct data input.
 
+# Deployment
+### GitHub
+The website was deployed by the following steps:
+* From the GitHub repository page, click settings.
+* Click pages and under source select the main branch from the dropdown and then click save.
+* The site will then be published with the URL provided.<br>
 
+To clone a GitHub repository, use the following steps:
+* Navigate to the respository main page.
+* Above the list of files click Code.
+* Copy the URL for the repository.
+* You'll be presented with different method of cloning the repository.
+* Using HTTPS, an SSH key, or using GitHub CLI.
+* Open Terminal and change working directory to the location where you want the cloned directory.
+* Type git clone, and then paste the URL you copied earlier.
+* Press enter to create your local clone.
 
+### Heroku
+* Create new account and click 'Create new app'.
+* Once the app is created, under settings, click 'Config Vars'.
+* Add the contents of the Google Sheets credentials file.
+* Add additional config var: PORT with a value of 8000.
+* Add two build packs for Python and Nodejs.
+* Click the Deploy tab and choose GitHub as deployment method.
+* Enter the GitHub project repository and click connect.
+* Scroll down and click 'Deploy Branch' to get the latest version of the repository code.
+* Click on 'View' to access the deployed app.
+
+# Credits
+Thank you to my mentor Adegbenga for advising me on the best course of implementation for my project to meet the necessary requirements and for other pointers.
+The Code Institute Love Sandwiches project was referenced for the implentation of my code.
 
 
