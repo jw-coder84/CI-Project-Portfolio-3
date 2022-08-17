@@ -85,6 +85,8 @@ Filtered by platform.
 
 * Adding a function to Export the top ten lists to a file to allow users to use the data for their own purposes.
 
+* Further validating the add game functionality to prevent the same game being added more than once.
+
 [Back to contents](#contents)
 
 # Technologies Used
@@ -94,7 +96,7 @@ Filtered by platform.
 * [CSS](https://en.wikipedia.org/wiki/CSS) - Used in Code Institute template.
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript) - Used in Code Institute template.
 
-# External Sources
+# External Resources
 * [Pandas docs](https://pandas.pydata.org/)
 * [gspread docs](https://docs.gspread.org/)
 * [gspread-dataframe docs](https://pypi.org/project/gspread-dataframe/)
