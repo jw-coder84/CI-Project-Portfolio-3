@@ -14,7 +14,7 @@
         * [Search Spreadsheet](#search-spreadsheet)
     * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
-* [External Sources](#external-sources)
+* [External Resources](#external-resources)
 * [Python Libraries Used](#python-libraries-used)
 * [Testing](#testing)
     * [Bugs and Solutions](#bugs-and-solutions)
